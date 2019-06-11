@@ -121,4 +121,17 @@ public class FunctionEntity extends ContainerEntity{
 		}
 		return super.lookupVarLocally(varName);
 	}
+	@Override
+	public String getQualifiedName(){
+		String qualifiedMethodName = qualifiedName;
+		qualifiedMethodName += "(";
+		for(VarEntity varEntity: parameters){
+			qualifiedMethodName += (varEntity.getRawType()+",");
+		}
+		if(parameters.size()>0){
+			qualifiedMethodName = qualifiedMethodName.substring(0,qualifiedMethodName.length()-1);
+		}
+		qualifiedMethodName += ")";
+		return qualifiedMethodName;
+	}
 }

@@ -127,7 +127,7 @@ public abstract class Entity {
 		this.rawName = rawName;
 	}
 	
-	public final String getQualifiedName() {
+	public String getQualifiedName() {
 		return qualifiedName;
 	}
 
